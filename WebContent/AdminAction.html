@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+		<style>
+body {
+    background-image: url(IF.jpg);
+	background-position: center;
+    background-attachment: fixed;
+
+}
+h1 
+{
+    text-align: center;
+	  color: darkblue;
+    text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px green;
+  
+}
+h2
+{
+    text-align: center;
+	  color: green;
+    text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px limegreen;
+  
+}
+
+.ownership 
+{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+
+}
+</style>
+<body>
+<h1>DIGITAL INDIA VOTING SYSTEM (DIVS)</h1>
+<h2>Search Candidate Details By Candidate ID</h2>
+<form action="AdminSearchCandidateDetails.jsp">
+<center>
+<input type="submit" value="Go">
+</center>
+</form>
+<h2>View Result By Area</h2>
+<form action="AdminSearchVoteResultByAreaCode.jsp">
+<center>
+<input type="submit" value="Go">
+</center>
+</form>
+<h2>View Voter Details</h2>
+<form action="AdminSearchVoterDetails.jsp">
+<center>
+<input type="submit" value="Go">
+</center>
+</form>
+<h2>Allow Voter For ReVote</h2>
+<form action="AdminAllowVoterForReVote.jsp">
+<center>
+<input type="submit" value="Go">
+<br>
+<br>
+<a href="AdminLogin.html"><input type="button" value="Back"></a>
+</center>
+</form>
+<div class="ownership">Powered by JSP <br>
+	   Developed by Prasenjit Kr Malakar<br>
+       All Rights Reserved.</div>
+</body>
+</html>
