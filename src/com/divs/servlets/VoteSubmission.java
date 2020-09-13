@@ -1,3 +1,4 @@
+package com.divs.servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,8 +28,8 @@ public class VoteSubmission extends HttpServlet
 	
 		try 
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");
 			
 		}
 		 catch (Exception e)
@@ -40,13 +41,15 @@ public class VoteSubmission extends HttpServlet
 	{
 		HttpSession hs=req.getSession();
 		String vid=(String) hs.getAttribute("VoterID");
-		System.out.println(vid);
+		System.out.println("Voter: "+vid);
 		cndt=req.getParameter("candidate");
+		System.out.println("Candidate: "+cndt);
 		if("c1".equals(cndt))
 				{
 			        try
 			        {
 			        	String c=(String)hs.getAttribute("CandidateID1");
+			        	System.out.println("CandidateID1: "+c);
 					    pstmt=con.prepareStatement(vote);
 				     	pstmt.setString(1,c);
 						rs=pstmt.executeQuery();
@@ -56,10 +59,10 @@ public class VoteSubmission extends HttpServlet
 						pstmt=con.prepareStatement(addvote);
 				    	pstmt.setInt(1, i);
 						pstmt.setString(2,c);
-						pstmt.executeQuery();
+						pstmt.executeUpdate();
 						pstmt=con.prepareStatement(votingstatusupdate);
 						pstmt.setString(1,vid);
-						pstmt.executeQuery();
+						pstmt.executeUpdate();
 						res.sendRedirect("/Project_DigitalIndiaVotingSystemMVC/ThankYou.html");
 					} 
 			        
@@ -73,6 +76,7 @@ public class VoteSubmission extends HttpServlet
 			 try
 		        {
 				    String c=(String)hs.getAttribute("CandidateID2");
+				    System.out.println("CandidateID2: "+c);
 					pstmt=con.prepareStatement(vote);
 					pstmt.setString(1,c);
 					rs=pstmt.executeQuery();
@@ -82,10 +86,10 @@ public class VoteSubmission extends HttpServlet
 					pstmt=con.prepareStatement(addvote);
 					pstmt.setInt(1, i);
 					pstmt.setString(2,c);
-					pstmt.executeQuery();
+					pstmt.executeUpdate();
 					pstmt=con.prepareStatement(votingstatusupdate);
 					pstmt.setString(1,vid);
-					pstmt.executeQuery();
+					pstmt.executeUpdate();
 					res.sendRedirect("/Project_DigitalIndiaVotingSystemMVC/ThankYou.html");
 				} 
 		        
@@ -99,6 +103,7 @@ public class VoteSubmission extends HttpServlet
 		          try
                        {
 		                	String c=(String)hs.getAttribute("CandidateID3");
+		                	System.out.println("CandidateID3: "+c);
 		                	pstmt=con.prepareStatement(vote);
 		                	pstmt.setString(1,c);
 		                	rs=pstmt.executeQuery();
@@ -108,10 +113,10 @@ public class VoteSubmission extends HttpServlet
 		                	pstmt=con.prepareStatement(addvote);
 		                	pstmt.setInt(1, i);
 		                	pstmt.setString(2,c);
-		                	pstmt.executeQuery();
+		                	pstmt.executeUpdate();
 		                	pstmt=con.prepareStatement(votingstatusupdate);
 							pstmt.setString(1,vid);
-							pstmt.executeQuery();
+							pstmt.executeUpdate();
 		                	res.sendRedirect("/Project_DigitalIndiaVotingSystemMVC/ThankYou.html");
                        } 
         

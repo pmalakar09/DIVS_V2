@@ -6,36 +6,25 @@
 		</description>
 		<display-name>Controller</display-name>
 		<servlet-name>Controller</servlet-name>
-		<servlet-class>Controller</servlet-class>
-	</servlet>
-	<servlet>
-		<description>
-		</description>
-		<display-name>ResultSubmission</display-name>
-		<servlet-name>ResultSubmission</servlet-name>
-		<servlet-class>ResultSubmission</servlet-class>
+		<servlet-class>com.divs.servlets.Controller</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
 		</description>
 		<display-name>VoteSubmission</display-name>
 		<servlet-name>VoteSubmission</servlet-name>
-		<servlet-class>VoteSubmission</servlet-class>
+		<servlet-class>com.divs.servlets.VoteSubmission</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
 		</description>
 		<display-name>AdminLogin</display-name>
 		<servlet-name>AdminLogin</servlet-name>
-		<servlet-class>AdminLogin</servlet-class>
+		<servlet-class>com.divs.servlets.AdminLogin</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Controller</servlet-name>
 		<url-pattern>/Controller</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ResultSubmission</servlet-name>
-		<url-pattern>/ResultSubmission</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>VoteSubmission</servlet-name>

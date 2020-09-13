@@ -2,9 +2,6 @@
     <wb-module deploy-name="Project_DigitalIndiaVotingSystemMVC">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="ojdbc6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/Software/Oracle Database 11g 11.2.0.2.0 Release 2 JDBC Drivers/ojdbc6.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="Project_DigitalIndiaVotingSystemMVC"/>
         <property name="java-output-path" value="/Project_DigitalIndiaVotingSystemMVC/build/classes"/>
     </wb-module>

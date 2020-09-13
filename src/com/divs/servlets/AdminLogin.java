@@ -1,3 +1,4 @@
+package com.divs.servlets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,8 +21,10 @@ public class AdminLogin extends HttpServlet
 	{
 		try 
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//			con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
+			Class.forName("com.mysql.jdbc.Driver");  
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");  
 			
 		}
 		 catch (Exception e)
