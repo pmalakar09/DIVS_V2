@@ -27,10 +27,10 @@ public class Model {
 			System.out.println("DIVS Initializing..");
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Driver Loading Done");
+			System.out.println("Driver Loading Done!");
 			//con = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "admin", "1989");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");
-			System.out.println("Connection Established");
+			System.out.println("Connection Established!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
