@@ -24,7 +24,7 @@ public class Model {
 
 	public Model() {
 		try {
-			System.out.println("DIVS Initializing....");
+			System.out.println("DIVS Engine Initializing....");
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Driver Loading Done!");
