@@ -13,7 +13,7 @@ public class Connector {
 	private static String dbDriver = null;
 	private static String dbPASSWORD = null;
 	private static String db = null;
-	private static String dbPort = "3306"; // Default PORT assigned
+	private static String dbPort = "3306"; // Default PORT assigned.
 
 	public static void setDbUrl(String dbURL) {
 		Connector.dbURL = dbURL;
@@ -61,7 +61,7 @@ public class Connector {
 			}
 
 			else {
-				System.out.println("Inside else");
+				System.out.println("Inside else!");
 				Class.forName(dbDriver);
 				log.info("Driver Loading Is Done Successfully");
 				this.connection = DriverManager.getConnection(dbURL.concat(":") + dbPort.concat("/") + db, dbUSER,
