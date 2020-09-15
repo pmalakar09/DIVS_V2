@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.divs.utils.Connector;
+
 public class Model {
-	Connection con=null;
+	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	private String voterid;
@@ -22,14 +24,19 @@ public class Model {
 	private String cid2;
 	private String cid3;
 
-	public Model() {
+	public Model(Connector objConnector) {
 		try {
+			// Loader objLoader=new Loader();
 			System.out.println("DIVS Engine Initializing....");
-			//Class.forName("oracle.jdbc.driver.OracleDriver");
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Driver Loading Done!");
-			//con = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE", "admin", "1989");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");
+			// Class.forName("oracle.jdbc.driver.OracleDriver");
+			// Class.forName("com.mysql.jdbc.Driver");
+			// System.out.println("Driver Loading Done!");
+			// con =
+			// DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE",
+			// "admin", "1989");
+			// con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");
+			// con=DriverManager.getConnection(dbURL+"/"+db+","+dbUSER+","+dbPASSWORD);
+			con = objConnector.getConnection();
 			System.out.println("Connection Established!");
 		} catch (Exception e) {
 			e.printStackTrace();
