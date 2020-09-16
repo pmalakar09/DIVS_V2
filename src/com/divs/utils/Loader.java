@@ -14,12 +14,11 @@ import com.divs.servlets.VoteSubmission;
 
 public class Loader {
 	private static ResourceBundle resourceBundle = null;
-	static Logger log = Logger.getLogger(Loader.class);
+	private static Logger log = Logger.getLogger(Loader.class);
 
 	public void readInputs() {
-		System.out.println("loader");
 		Connector objConnector = new Connector();
-		System.out.println(objConnector);
+		//System.out.println(objConnector);
 		FileInputStream fileInput = null;
 
 		try {
@@ -65,6 +64,13 @@ public class Loader {
 			System.out.println("DB: " + getValueFromResourceBundle("DATASOURCE.DB"));
 			System.out.println("DBPASSWORD: " + getValueFromResourceBundle("DATASOURCE.DBPASSWORD"));
 			System.out.println("DBUSER: " + getValueFromResourceBundle("DATASOURCE.DBUSER"));
+			
+			log.debug("DBURL: " + getValueFromResourceBundle("DATASOURCE.DBURL"));
+			log.debug("DRIVER: " + getValueFromResourceBundle("DATASOURCE.DRIVER"));
+			log.debug("DBPORT: " + getValueFromResourceBundle("DATASOURCE.DBPORT"));
+			log.debug("DB: " + getValueFromResourceBundle("DATASOURCE.DB"));
+			log.debug("DBPASSWORD: " + getValueFromResourceBundle("DATASOURCE.DBPASSWORD"));
+			log.debug("DBUSER: " + getValueFromResourceBundle("DATASOURCE.DBUSER"));
 
 		} catch (Exception e) {
 			log.debug("ERROR during loading the dbcore.properties!!!! " + e);
@@ -81,6 +87,7 @@ public class Loader {
 			return resourceBundle.getString(key);
 		} catch (Exception e) {
 			e.printStackTrace();
+			log.debug(e);
 			// logger.error(e.getMessage());
 		}
 		return null;
