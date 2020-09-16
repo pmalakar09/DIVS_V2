@@ -5,10 +5,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.apache.log4j.Logger;
+
 import com.divs.utils.Connector;
+import com.divs.utils.Loader;
 
 public class Model {
-	Connection con = null;
+	private static Logger log = Logger.getLogger(Model.class);
+	private static Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	private String voterid;
@@ -28,6 +32,7 @@ public class Model {
 		try {
 			// Loader objLoader=new Loader();
 			System.out.println("DIVS Engine Initializing....");
+			log.debug("DIVS Engine Initializing....");
 			// Class.forName("oracle.jdbc.driver.OracleDriver");
 			// Class.forName("com.mysql.jdbc.Driver");
 			// System.out.println("Driver Loading Done!");
@@ -36,8 +41,11 @@ public class Model {
 			// "admin", "1989");
 			// con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");
 			// con=DriverManager.getConnection(dbURL+"/"+db+","+dbUSER+","+dbPASSWORD);
+			if(con==null){
 			con = objConnector.getConnection();
 			System.out.println("Connection Established!");
+			log.debug("DB Connection Established!");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
