@@ -126,5 +126,6 @@ public class VoteSubmission extends HttpServlet
 		          	}
 		System.out.println("vote updated");
 			}
+		hs.invalidate();
 	 }
 }

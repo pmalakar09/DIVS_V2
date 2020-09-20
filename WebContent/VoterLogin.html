@@ -1,53 +1,58 @@
 <!Doctype HTML>
 <html>
-	<head>
-	</head>
-	<style>
+<head>
+<script type="text/javascript">
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {null};
+</script>
+</head>
+<style>
 body {
-    background-image: url(IF.jpg);
+	background-image: url(IF.jpg);
 	background-position: center;
-    background-attachment: fixed;
-
-}
-h1 
-{
-    text-align: center;
-	  color: darkblue;
-    text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px green;
-  
-}
-h2
-{
-    text-align: center;
-	  color: green;
-    text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px limegreen;
-  
+	background-attachment: fixed;
 }
 
-.ownership 
-{
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    font-size: 18px;
-
+h1 {
+	text-align: center;
+	color: darkblue;
+	text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px green;
 }
-<body>
+
+h2 {
+	text-align: center;
+	color: green;
+	text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px limegreen;
+}
+
+.ownership {
+	position: absolute;
+	bottom: 8px;
+	right: 16px;
+	font-size: 18px;
+}
+<
+body
+>
 </style>
-		<title>Voting Main Page</title>
-	
-		<h1>DIGITAL INDIA VOTING SYSTEM (DIVS)</h1>
-		<h2>Voter Login</h2>
-	<form action="Controller">
+<title>Voting Main Page</title>
+
+<h1>DIGITAL INDIA VOTING SYSTEM (DIVS)</h1>
+<h2>Voter Login</h2>
+<form action="Controller">
 	<center>
-		<input type="text" name="VoterID" autofocus placeholder=" Please Enter Voter ID"><br>
-		<br>
-		<input type="submit" value="Enter">
-		<a href="WelcomeIndia.html"><input type="button" value="Back"></a>
-		</center>
-	</form>
-	<div class="ownership">Powered by JSP <br>
-	   Developed by Prasenjit Kr Malakar<br>
-       All Rights Reserved.</div>
-	</body>
+		<input type="text" name="VoterID" autofocus
+			placeholder=" Please Enter Voter ID"><br> <br> <input
+			type="submit" value="Enter"> <a href="WelcomeIndia.html"><input
+			type="button" value="Back"></a>
+	</center>
+</form>
+<div class="ownership">
+	Powered by JSP <br> Developed by Prasenjit Kr Malakar<br> All
+	Rights Reserved.
+</div>
+</body>
 </html>

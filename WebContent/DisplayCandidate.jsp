@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Candidates</title>
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+</script>
 </head>
 	<style>
 body {
@@ -56,6 +61,10 @@ String p2;
 String p3;
 %>
 <%
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");//HTTP 1.1
+response.setHeader("Pragma", "no-cache");//HTTP 1.0
+response.setHeader("Expires", "0");// Proxy Server
+response.setDateHeader( "Expires", 0 );
 HttpSession hs=request.getSession();
  c1=(String)hs.getAttribute("Candidate1");
  p1=(String)hs.getAttribute("Party1");
@@ -87,5 +96,8 @@ HttpSession hs=request.getSession();
 <div class="ownership">Powered by JSP <br>
 	   Developed by Prasenjit Kr Malakar<br>
        All Rights Reserved.</div>
+<script>
+window.alert("Dear Voter, you only get '10 Seconds' to submit your vote, after that this link will expire!!");
+</script>
 </body>
 </html>
