@@ -1,51 +1,131 @@
-<!Doctype Html>
-<html>
-
-	<head>
-	</head>
-	<style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>transparent login form</title>
+<style>
 body {
-    background-image: url(IF.jpg);
-	background-position: center;
-    background-attachment: fixed;
-
-}
-h1 
-{
-    text-align: center;
-	  color: darkblue;
-    text-shadow: 1px 1px 22px white, 0 25px 25px red, 0 2px 25px green;
-  
+	margin: 0;
+	padding: 0;
 }
 
-.ownership 
-{
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    font-size: 18px;
+body:before {
+	content: '';
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("IF.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-o-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+}
 
+.divs-login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 500px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, .5);
+}
+
+.avatar {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-80px/ 2);
+	left: calc(50% - 40px);
+}
+
+.divs-login h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.divs-login input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.divs-login input[type="submit"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.divs-login input[type="submit"] {
+	height: 40px;
+	color: #fff;
+	font-size: 25px;
+	background: red;
+	cursor: pointer;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+	margin-top: 15%;
+}
+
+.divs-login a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.title {
+	position: absolute;
+	top: 1%;
+	left: 30%;
+	text-align: center;
+	color: darkblue;
+	text-shadow: 1px 1px 22px black, 0 25px 25px red, 0 2px 25px green;
+}
+
+.ownership {
+	position: absolute;
+	bottom: 8px;
+	right: 16px;
+	font-size: 18px;
 }
 </style>
+</head>
 <body>
-		<title>Login</title>
-	<h1>WELCOME TO DIGITAL INDIA VOTING SYSTEM (DIVS)</h1>
-	<form name="VoterLogin" action="VoterLogin.html">
-		<center>
+	<title>Login</title>
+	<div class="title">
+		<h2>WELCOME TO DIGITAL INDIA VOTING SYSTEM (DIVS)</h2>
+	</div>
+	<div class="divs-login">
+		<img src="1.png" class="avatar">
+		<h2>Select Login</h2>
+		<form name="VoterLogin" action="VoterLogin.html">
 			<input type="submit" value="Voters Login"><br>
-			
-		</center>
-	</form>
-	<br>
-	<form name="AdminLogin" action="AdminLogin.html" >
-		<center>
+		</form>
+		<br>
+		<form name="AdminLogin" action="AdminLogin.html">
 			<input type="submit" value="Admin login">
-		</center>
-	</form>
-	
-	
-	<div class="ownership">Powered by JSP <br>
-	   Developed by Prasenjit Kr Malakar<br>
-       All Rights Reserved.</div>
-	</body>
+		</form>
+	</div>
+	<div class="ownership">
+		Powered by JSP <br> Developed by Prasenjit Kr Malakar<br>
+		All Rights Reserved.
+	</div>
+</body>
 </html>
