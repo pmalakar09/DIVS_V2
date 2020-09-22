@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*,  com.divs.utils.Connector, org.apache.log4j.Logger" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,16 +66,26 @@ String cndsex;
 String cndparty;
 int cndvote;
 
-Connection con=null;
+//Connection con=null;
+
+private static Connection con = null;
+Connector objConnector = new Connector();
+private static Logger log = Logger.getLogger("AdminSearchCandidateDetails");
+
 PreparedStatement pstmt=null;
 ResultSet rs=null;
 String query="select * from candidates where candidate_id=?";
 public void jspInit()
 {
 	try{
-	Class.forName("oracle.jdbc.driver.OracleDriver");
+	//Class.forName("oracle.jdbc.driver.OracleDriver");
 	System.out.println("Driver Loaded");
-	con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
+	//con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
+	if(con==null){
+		con = objConnector.getConnection();
+		System.out.println("Connection Established For AdminSearchVoteResultBy Area!");
+		log.debug("DB Connection Established For Admin!");
+	}
 	System.out.println("Connection Stablished");
 	     }
 	catch(Exception e)
