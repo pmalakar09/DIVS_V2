@@ -8,9 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
+import com.divs.core.Model;
+import com.divs.utils.Connector;
+
 public class AdminLogin extends HttpServlet
 {
-	Connection con=null;
+	private static Logger log = Logger.getLogger(AdminLogin.class);
+	private static Connection con = null;
+	Connector objConnector = new Connector();
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	private String adminquery="select user_name,password from admins where admin_id=?";
@@ -23,9 +30,13 @@ public class AdminLogin extends HttpServlet
 		{
 //			Class.forName("oracle.jdbc.driver.OracleDriver");
 //			con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/XE","admin","1989");
-			Class.forName("com.mysql.jdbc.Driver");  
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");  
-			
+//			Class.forName("com.mysql.jdbc.Driver");  
+//			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/prasenjit","root","admin");  
+			if(con==null){
+				con = objConnector.getConnection();
+				System.out.println("Connection Established For Admin!");
+				log.debug("DB Connection Established For Admin!");
+			}
 		}
 		 catch (Exception e)
 		{
