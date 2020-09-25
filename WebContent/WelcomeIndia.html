@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>transparent login form</title>
+<title>DIVS</title>
 <style>
 body {
 	margin: 0;
@@ -97,8 +97,22 @@ body:before {
 	text-align: center;
 	color: darkblue;
 	text-shadow: 1px 1px 22px black, 0 25px 25px red, 0 2px 25px green;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
 }
 
+@-webkit-keyframes glow {from { text-shadow:0010px#3348FF, 0020px#3348FF,
+	0030px#e60073, 0040px#e60073, 0050px#e60073, 0060px#e60073, 0070px#e60073;
+	
+}
+
+to {
+	text-shadow: 0 0 20px #3348FF, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0
+		50px #ff4da6, 0 0 60px #ff4da6, 0 0 60px #ff4da6, 0 0 90px #ff4da6;
+}
+
+}
 .ownership {
 	position: absolute;
 	bottom: 8px;
